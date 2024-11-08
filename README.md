@@ -6,9 +6,3 @@ using pip:
 ```bash
 pip install skysurvey-skyfield
 ```
-or cloneing the repo
-```bash
-git clone https://github.com/MickaelRigault/skysurvey-skyfield.git
-cd skysurvey-skyfield
-pip install .
-```
