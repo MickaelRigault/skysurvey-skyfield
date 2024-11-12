@@ -62,7 +62,7 @@ def zcosmo_to_zobs(zcosmo, vpec):
 model_3d = {"radecz": {"func": get_random_3d,
                       #"kwargs": {}, # function's options
                        "as":["ra", "dec", "zcosmo", "vpec"] # stroring names
-					   },
+			},
             "z": {"func": zcosmo_to_zobs,
                  "kwargs": {"zcosmo":"@zcosmo", "vpec":"@vpec"},
                  }
