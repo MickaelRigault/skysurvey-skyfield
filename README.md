@@ -51,7 +51,7 @@ def get_random_3d(size, rate,
     return ra, dec, zcosmo, vpec
 	
 # build the model
-model_3d = {"radecz": {"func": random,
+model_3d = {"radecz": {"func": get_random_3d,
                       #"kwargs": {}, # function's options
                        "as":["ra", "dec", "z", "vpec"] # stroring names
 					   }
