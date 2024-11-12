@@ -17,7 +17,7 @@ import skysurvey_skyfield
 model_3d = {"radecz": {"func": func_returning___ra_dec_z_vpec,
                       #"kwargs": {}, # function's options
                        "as":["ra", "dec", "z", "vpec"] # stroring names
-					   }
+			}
           }
 snia = skysurvey.SNIa.from_draw(5_000, model=model_3d)
 ```
