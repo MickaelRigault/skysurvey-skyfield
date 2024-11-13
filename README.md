@@ -43,10 +43,12 @@ def get_random_3d(size, rate,
     from skysurvey.target import rates
     
     # random draw in the sky
-    ra, dec = random_radec(size=size, skyarea=skyarea, ra_range=ra_range, dec_range=dec_range)
+    ra, dec = random_radec(size=size, skyarea=skyarea,
+				ra_range=ra_range, dec_range=dec_range)
 
     # redshift follow the rate
-    zcosmo = rates.draw_redshift(size, rate, zmin=zmin, zmax=zmax, zstep=zstep, skyarea=skyarea, **kwargs)
+    zcosmo = rates.draw_redshift(size, rate, zmin=zmin, zmax=zmax, zstep=zstep,
+				skyarea=skyarea, **kwargs)
 
     # random vpec
     vpec = np.random.normal(size=size, **vpec_prop)
