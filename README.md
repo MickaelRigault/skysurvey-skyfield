@@ -43,10 +43,12 @@ def get_random_3d(size, rate,
     from skysurvey.target import rates
     
     # random draw in the sky
-    ra, dec = random_radec(size=size, skyarea=skyarea, ra_range=ra_range, dec_range=dec_range)
+    ra, dec = random_radec(size=size, skyarea=skyarea,
+				ra_range=ra_range, dec_range=dec_range)
 
     # redshift follow the rate
-    zcosmo = rates.draw_redshift(size, rate, zmin=zmin, zmax=zmax, zstep=zstep, skyarea=skyarea, **kwargs)
+    zcosmo = rates.draw_redshift(size, rate, zmin=zmin, zmax=zmax, zstep=zstep,
+				skyarea=skyarea, **kwargs)
 
     # random vpec
     vpec = np.random.normal(size=size, **vpec_prop)
@@ -62,7 +64,7 @@ def zcosmo_to_zobs(zcosmo, vpec):
 model_3d = {"radecz": {"func": get_random_3d,
                       #"kwargs": {}, # function's options
                        "as":["ra", "dec", "zcosmo", "vpec"] # stroring names
-					   },
+			},
             "z": {"func": zcosmo_to_zobs,
                  "kwargs": {"zcosmo":"@zcosmo", "vpec":"@vpec"},
                  }
